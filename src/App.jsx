@@ -1,7 +1,7 @@
 import './App.css'
-import Button from "./components/button/Button.jsx";
-import SignUp from "./components/sign-up/sign-up.jsx";
-import Login from "./components/login/login.jsx";
+import Button from "./components/Button/Button.jsx";
+import SignUp from "./components/SignUp/SignUp.jsx";
+import Login from "./components/Login/Login.jsx";
 import {useState} from "react";
 
 function App() {

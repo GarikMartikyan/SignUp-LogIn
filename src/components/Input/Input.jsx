@@ -1,10 +1,10 @@
-import classes from './input.module.css'
+import classes from './Input.module.css'
 import {useState} from "react";
 export default function Input({iconName, placeholder, type = 'text', name = ''}) {
     const [valid, setValid] = useState(true)
-    const isvalid = valid? `${classes.container}` : `${classes.container} ${classes.noValid}`;
+    const isValid = valid? `${classes.container}` : `${classes.container} ${classes.noValid}`;
     return (
-        <div className={isvalid}>
+        <div className={isValid}>
             <div className={classes.icon}>
                 <span className="material-symbols-outlined">{iconName}</span>
             </div>

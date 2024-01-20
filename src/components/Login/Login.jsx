@@ -1,7 +1,8 @@
-import Input from "../input/input.jsx";
+import Input from "../Input/Input.jsx";
 import styled from "styled-components";
-import Button from "../button/Button.jsx";
-import classes from './login.module.css'
+import Button from "../Button/Button.jsx";
+import classes from './Login.module.css'
+import PassInput from "../Input/PassInput.jsx";
 
 const A = styled.a`
   text-decoration: none;
@@ -14,7 +15,7 @@ export default function Login() {
         <div>
             <form name="login" action="#" autoComplete="on">
                 <Input name="email" type="email" iconName="email" placeholder="Email"/>
-                <Input name="password" type="password" iconName="lock" placeholder="Password"/>
+                <PassInput/>
                 <p>Lost password? <A href="#">Click here!</A></p>
                 <div className={classes.centeredDiv}>
                     <Button children="Enter" isActive={true} type="submit"/>
