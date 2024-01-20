@@ -15,22 +15,12 @@ function App() {
                         {tab? 'Sign Up' : 'Login'}
                     </h2>
                 </div>
-
+                <div className='buttonContainer'>
+                    <Button isActive={tab} onClick={!tab? () => setTab(prv => !prv) : null} children={'Sign Up'}/>
+                    <Button isActive={!tab} onClick={tab? () => setTab(prv => !prv) : null} children={'Login'}/>
+                </div>
                 {tab && <SignUp/>}
                 {!tab && <Login/>}
-                <div className='buttonContainer'>
-                    <Button isActive={tab}
-                            onClick={!tab? () => setTab(prv => !prv) : null}
-                            type={tab? 'submit' : null}
-                            form='signup'
-                            children={'Sign Up'}/>
-
-                    <Button isActive={!tab}
-                            onClick={tab? () => setTab(prv => !prv) : null}
-                            type={!tab? 'submit' : null}
-                            form='login'
-                            children={'Login'}/>
-                </div>
             </div>
         </div>
     )
