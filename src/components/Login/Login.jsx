@@ -13,7 +13,7 @@ export default function Login() {
 	function isValid(e) {
 		const email = e.target.email.value;
 		const password = e.target.password.value;
-		const valid = email.trim().length || password.trim().length;
+		const valid = email.trim().length && password.trim().length;
 
 		if (!valid) e.preventDefault();
 	}

@@ -1,14 +1,25 @@
-import classes from './Input.module.css'
-import {useState} from "react";
-export default function Input({iconName, placeholder, type = 'text', name = ''}) {
-    const [valid, setValid] = useState(true)
-    const isValid = valid? `${classes.container}` : `${classes.container} ${classes.noValid}`;
-    return (
-        <div className={isValid}>
-            <div className={classes.icon}>
-                <span className="material-symbols-outlined">{iconName}</span>
-            </div>
-            <input name={name} type={type} placeholder={placeholder} onChange={e => setValid(e.target.value.trim().length)}/>
-        </div>
-    )
+import classes from './Input.module.css';
+
+export default function Input({ iconName, errMessage = false, ...props }) {
+	let classContainer = classes.container;
+	let classWarning = classes.warning;
+
+	if (errMessage) {
+		classContainer = `${classes.container} ${classes.noValid}`;
+		classWarning = `${classes.warning} ${classes.visible}`;
+	}
+
+	return (
+		<div className={classes.wrapper}>
+			<div className={classContainer}>
+				<div className={classes.icon}>
+					<span className='material-symbols-outlined'>{iconName}</span>
+				</div>
+				<input {...props} />
+			</div>
+			<span className={classWarning}>
+				{errMessage ? errMessage : 'No Warning'}
+			</span>
+		</div>
+	);
 }

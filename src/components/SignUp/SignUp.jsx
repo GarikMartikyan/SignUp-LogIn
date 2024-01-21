@@ -4,12 +4,13 @@ import Button from '../Button/Button.jsx';
 import PassInput from '../Input/PassInput.jsx';
 
 export default function SignUp() {
+	// const [state] = useReducer();
 	function isValid(e) {
 		const name = e.target.name.value;
 		const email = e.target.email.value;
 		const password = e.target.password.value;
 		const valid =
-			name.trim().length || email.trim().length || password.trim().length;
+			name.trim().length && email.trim().length && password.trim().length;
 		if (!valid) e.preventDefault();
 	}
 

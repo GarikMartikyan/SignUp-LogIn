@@ -1,3 +1,7 @@
+.wrapper{
+    /*margin-top: 1rem;*/
+    margin-bottom: 0.25rem;
+}
 .container {
     position: relative;
     width: 100%;
@@ -5,7 +9,7 @@
     background-color: #ececec;
     display: flex;
     border-radius: 3px;
-    margin: 20px 0;
+    margin: 0;
 }
 
 .icon {
@@ -34,14 +38,29 @@
     border-radius: 3px;
 }
 
-.container input:focus{
+.container input:focus,
+.container input:focus-within{
     outline: none;
+    background-color: #ececec;
 }
-::placeholder{
-    /*font-weight: lighter;*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #ececec inset !important;
 }
 
 .noValid{
     border-bottom: red solid 1px;
     outline: none;
+}
+.warning{
+    color: red;
+    font-size: 0.75rem;
+    font-weight: bolder;
+    visibility: hidden;
+}
+.visible{
+    visibility: visible;
 }
