@@ -5,12 +5,13 @@ import classes from './Login.module.css';
 import PassInput from '../Input/PassInput.jsx';
 import { useState } from 'react';
 
-const A = styled.a`
+const A = styled.span`
 	text-decoration: none;
 	color: #300b9a;
+	cursor: pointer;
 `;
 
-export default function Login() {
+export default function Login({ onClick }) {
 	const [warning, setWarning] = useState(false);
 	function isValid(e) {
 		const email = e.target.email.value;
@@ -32,7 +33,10 @@ export default function Login() {
 				<Input name='email' type='email' iconName='email' placeholder='Email' />
 				<PassInput name='password' placeholder='Password' />
 				<p>
-					Lost password? <A href='#'>Click here!</A>
+					Lost password?{' '}
+					<A onClick={onClick} href='#'>
+						Click here!
+					</A>
 				</p>
 				<div className={classes.centeredDiv}>
 					<Button children='Enter' isActive={true} type='submit' />

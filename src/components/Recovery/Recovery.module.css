@@ -1,0 +1,13 @@
+.containerDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.back{
+    margin-top: 20px;
+}
+.back span{
+    text-decoration: none;
+    color: #300b9a;
+    cursor: pointer;
+}
