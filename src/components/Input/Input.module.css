@@ -1,5 +1,4 @@
 .wrapper{
-    /*margin-top: 1rem;*/
     margin-bottom: 0.25rem;
 }
 .container {
@@ -10,6 +9,7 @@
     display: flex;
     border-radius: 3px;
     margin: 0;
+    box-sizing: border-box;
 }
 
 .icon {
@@ -44,11 +44,19 @@
     background-color: #ececec;
 }
 
+/* Change autocomplete styles in WebKit */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
-input:-webkit-autofill:active{
-    -webkit-box-shadow: 0 0 0 30px #ececec inset !important;
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    -webkit-text-fill-color: #616060;
+    -webkit-box-shadow: 0 0 0 30px #ececec inset;
+    font-size: 1.2rem;
 }
 
 .noValid{
@@ -58,9 +66,13 @@ input:-webkit-autofill:active{
 .warning{
     color: red;
     font-size: 0.75rem;
-    font-weight: bolder;
     visibility: hidden;
 }
 .visible{
     visibility: visible;
+    animation: visible 300ms;
+}
+@keyframes visible {
+    from{opacity: 0.2;}
+    to{opacity: 1;}
 }
