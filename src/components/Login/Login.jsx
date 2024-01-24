@@ -14,8 +14,6 @@ export default function Login() {
 		const email = e.target.email.value;
 		const password = e.target.password.value;
 		const valid = email.trim().length && password.trim().length;
-
-		if (!valid) e.preventDefault();
 	}
 
 	return (

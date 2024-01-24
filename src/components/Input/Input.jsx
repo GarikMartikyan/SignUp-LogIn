@@ -1,10 +1,17 @@
 import classes from './Input.module.css';
 
-export default function Input({ iconName, errMessage = false, ...props }) {
+export default function Input({
+	name,
+	type = 'text',
+	placeholder,
+	iconName,
+	warning,
+	...props
+}) {
 	let classContainer = classes.container;
 	let classWarning = classes.warning;
 
-	if (errMessage) {
+	if (warning) {
 		classContainer = `${classes.container} ${classes.noValid}`;
 		classWarning = `${classes.warning} ${classes.visible}`;
 	}
@@ -15,11 +22,15 @@ export default function Input({ iconName, errMessage = false, ...props }) {
 				<div className={classes.icon}>
 					<span className='material-symbols-outlined'>{iconName}</span>
 				</div>
-				<input {...props} />
+				<input
+					id={name}
+					name={name}
+					type={type}
+					placeholder={placeholder}
+					{...props}
+				/>
 			</div>
-			<span className={classWarning}>
-				{errMessage ? errMessage : 'No Warning'}
-			</span>
+			<span className={classWarning}>{warning ? warning : 'No Warning'}</span>
 		</div>
 	);
 }
